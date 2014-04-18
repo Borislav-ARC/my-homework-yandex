@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="css/jquery-ui.css" />
+        <link rel="stylesheet" href="css/minesweeper.min.css" />
+
+        <title>Emulator Win95</title>
+    </head>
+    <body>
+        <div class="container start-windows">
+            <div class="desktop">
+
+                <div class="icons my-comp">
+                    <span class="icon desk" data-window="my-comp"></span>
+                    <span class="icon-text"> Мой компьютер </span>
+                </div>
+                <div class="icons recycle empty">
+                    <span class="icon desk" data-window="recycle"></span>
+                    <span class="icon-text"> Корзина </span>
+                </div>
+                <div class="icons calc">
+                    <span class="icon desk" data-window="calculator"></span>
+                    <span class="icon-text"> Калькулятор </span>
+                </div>
+                <div class="icons notepad">
+                    <span class="icon desk" data-window="notepad"></span>
+                    <span class="icon-text"> Блокнот </span>
+                </div>
+                <div class="icons mineweeper">
+                    <span class="icon desk" data-window="mineweeper"></span>
+                    <span class="icon-text"> Сапер </span>
+                </div>
+                <div class="icons winamp">
+                    <span class="icon desk" data-window="winamp"></span>
+                    <span class="icon-text"> Winamp </span>
+                </div>
+                <div class="icons shri">
+                    <span class="icon desk" data-window="shri"></span>
+                    <span class="icon-text"> Шри Галлерея </span>
+                </div>
+
+            </div>
+            <div class="start-menu">
+                <div class="start btn-group dropdown-toggle" data-toggle="dropdown">
+                    <div class="wrap">
+                        <i class="start-icon"></i>
+                        <span class="start-text"> Пуск </span>
+                    </div>
+                </div>
+
+                <div class="taskbar"></div>
+
+                <div class="right-menu">
+                    <span class="language"></span>
+                    <span class="volume"></span>
+                    <span class="time"></span>
+                </div>
+            </div>
+            <div class="menu-list dropdown-menu">
+                <div class="menu-list-wrap">
+                <span class="menu-list-left"></span>
+                    <ul class="level-first">
+                        <li><span class="start-icons progs"></span> Программы <span class="arrow"></span>
+                            <div class="level-second">
+                                <div class="level-second-wrap">
+                                    <ul>
+                                        <li><span class="start-icons startup"></span>Автозагрузка</li>
+                                        <li><span class="start-icons accessories"></span>Стандартные</li>
+                                        <li><span class="start-icons ie"></span>Internet Explorer</li>
+                                        <li><span class="start-icons win-exp"></span>Проводник Windows </li>
+                                        <li><span class="start-icons ms-dos"></span>Сеанс MS-DOS</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li><span class="start-icons docs"></span> Документы <span class="arrow"></span></li>
+                        <li><span class="start-icons settings"></span> Настройка <span class="arrow"></span></li>
+                        <li><span class="start-icons find"></span> Поиск <span class="arrow"></span></li>
+                        <li><span class="start-icons help"></span> Справка</li>
+                        <li><span class="start-icons run"></span> Выполнить...</li>
+                        <li class="hr"></li>
+                        <li class="but-shutdown"><span class="start-icons power"></span> Завершение работы...</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Окна -->
+
+            <!--Мой компьютер-->
+            <div class="win-my-comp" data-window="my-comp">
+                <div class="win-menu">
+                    <ul>
+                        <li class="btn-group"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Файл </a>
+                            <ul class="dropdown-menu">
+                                <li class="no-active">Открыть</li>
+                                <li class="no-active">Отправить</li>
+                                <li class="no-active">Свойства</li>
+                            </ul>
+                        </li>
+                        <li class="btn-group"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Правка</a>
+                            <ul class="dropdown-menu">
+                                <li class="no-active">Копировать</li>
+                                <li class="no-active">Вырезать</li>
+                                <li class="no-active">Вставить</li>
+                            </ul>
+                        </li>
+                        <li>Вид</li>
+                        <li>Справка</li>
+                    </ul>
+                </div>
+                <div class="wrap">
+                    <div class="icons floppy">
+                        <span class="icon"></span>
+                        <span class="icon-text">Диск 3.5 (A:)</span>
+                    </div>
+                    <div class="icons disk-c">
+                        <span class="icon"></span>
+                        <span class="icon-text"> System (C:)</span>
+                    </div>
+                    <div class="icons cd-rom">
+                        <span class="icon"></span>
+                        <span class="icon-text"> (D:) </span>
+                    </div>
+                    <div class="icons control-panel">
+                        <span class="icon"></span>
+                        <span class="icon-text"> Панель управления </span>
+                    </div>
+                    <div class="icons printers">
+                        <span class="icon"></span>
+                        <span class="icon-text"> Принтеры </span>
+                    </div>
+                </div>
+            </div>
+
+             <!--Корзина-->
+            <div class="win-recycle" data-window="recycle">
+                <div class="win-menu">
+                    <ul>
+                        <li class="btn-group"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Файл </a>
+                            <ul class="dropdown-menu">
+                                <li class="clear-recycle">Очистить корзину</li>
+                                <li class="no-active">Отправить</li>
+                                <li class="no-active">Свойства</li>
+                            </ul></li>
+                        <li>Правка</li>
+                        <li>Вид</li>
+                        <li>Справка</li>
+                    </ul>
+                </div>
+                <div class="wrap">
+                </div>
+
+            </div>
+
+            <!--Блокнот-->
+            <div class="win-notepad" data-window="notepad">
+                <div class="win-menu">
+                    <ul>
+                        <li>Файл</li>
+                        <li>Правка</li>
+                        <li>Справка</li>
+                    </ul>
+                </div>
+                <div class="wrap">
+                    <textarea data-changes="false">Удалите или отредактируйте этот текст для проверки</textarea>
+                    <div class="quit-message-wrap">
+                        <div class="quit-message">
+                            <div class="message-wrap">
+                                <div class="message-header">
+                                    <button class="message-close" value="cancel"></button>
+                                </div>
+                                <span class="message-text"> Хотите сохранить изменения в файле Блокнот? </span>
+                                <div class="button-block">
+                                    <button class="message-button" value="yes"> Да </button>
+                                    <button class="message-button" value="no"> Нет </button>
+                                    <button class="message-button" value="cancel"> Отмена </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Сапер-->
+            <div class="win-mineweeper" data-window="mineweeper">
+                <div class="win-menu">
+                    <ul>
+                        <li>Игра</li>
+                        <li>Справка</li>
+                    </ul>
+                </div>
+                <div id="left">
+                <div id="game-container" class="z100">
+                    <div id="game" oncontextmenu="return false;" ondrag="return false;" ondragstart="return false;" style="width: 164px; height: 206px;"><div class="bordertl"></div><div class="bordertb"></div><div class="bordertb"></div><div class="bordertb"></div><div class="bordertb"></div><div class="bordertb"></div><div class="bordertb"></div><div class="bordertb"></div><div class="bordertb"></div><div class="bordertb"></div><div class="bordertr"></div><div class="borderlrlong"></div><div class="time0" id="mines_hundreds"></div><div class="time1" id="mines_tens"></div><div class="time0" id="mines_ones"></div><div class="facesmile" style="margin-left:14px; margin-right: 14px;" id="face"></div><div class="time0" id="seconds_hundreds"></div><div class="time0" id="seconds_tens"></div><div class="time0" id="seconds_ones"></div><div class="borderlrlong"></div><div class="borderjointl"></div><div class="bordertb"></div><div class="bordertb"></div><div class="bordertb"></div><div class="bordertb"></div><div class="bordertb"></div><div class="bordertb"></div><div class="bordertb"></div><div class="bordertb"></div><div class="bordertb"></div><div class="borderjointr"></div><div class="borderlr"></div><div class="square blank" id="1,1"></div><div class="square blank" id="1,2"></div><div class="square blank" id="1,3"></div><div class="square blank" id="1,4"></div><div class="square blank" id="1,5"></div><div class="square blank" id="1,6"></div><div class="square blank" id="1,7"></div><div class="square blank" id="1,8"></div><div class="square blank" id="1,9"></div><div class="borderlr"></div><div class="borderlr"></div><div class="square blank" id="2,1"></div><div class="square blank" id="2,2"></div><div class="square blank" id="2,3"></div><div class="square blank" id="2,4"></div><div class="square blank" id="2,5"></div><div class="square blank" id="2,6"></div><div class="square blank" id="2,7"></div><div class="square blank" id="2,8"></div><div class="square blank" id="2,9"></div><div class="borderlr"></div><div class="borderlr"></div><div class="square blank" id="3,1"></div><div class="square blank" id="3,2"></div><div class="square blank" id="3,3"></div><div class="square blank" id="3,4"></div><div class="square blank" id="3,5"></div><div class="square blank" id="3,6"></div><div class="square blank" id="3,7"></div><div class="square blank" id="3,8"></div><div class="square blank" id="3,9"></div><div class="borderlr"></div><div class="borderlr"></div><div class="square blank" id="4,1"></div><div class="square blank" id="4,2"></div><div class="square blank" id="4,3"></div><div class="square blank" id="4,4"></div><div class="square blank" id="4,5"></div><div class="square blank" id="4,6"></div><div class="square blank" id="4,7"></div><div class="square blank" id="4,8"></div><div class="square blank" id="4,9"></div><div class="borderlr"></div><div class="borderlr"></div><div class="square blank" id="5,1"></div><div class="square blank" id="5,2"></div><div class="square blank" id="5,3"></div><div class="square blank" id="5,4"></div><div class="square blank" id="5,5"></div><div class="square blank" id="5,6"></div><div class="square blank" id="5,7"></div><div class="square blank" id="5,8"></div><div class="square blank" id="5,9"></div><div class="borderlr"></div><div class="borderlr"></div><div class="square blank" id="6,1"></div><div class="square blank" id="6,2"></div><div class="square blank" id="6,3"></div><div class="square blank" id="6,4"></div><div class="square blank" id="6,5"></div><div class="square blank" id="6,6"></div><div class="square blank" id="6,7"></div><div class="square blank" id="6,8"></div><div class="square blank" id="6,9"></div><div class="borderlr"></div><div class="borderlr"></div><div class="square blank" id="7,1"></div><div class="square blank" id="7,2"></div><div class="square blank" id="7,3"></div><div class="square blank" id="7,4"></div><div class="square blank" id="7,5"></div><div class="square blank" id="7,6"></div><div class="square blank" id="7,7"></div><div class="square blank" id="7,8"></div><div class="square blank" id="7,9"></div><div class="borderlr"></div><div class="borderlr"></div><div class="square blank" id="8,1"></div><div class="square blank" id="8,2"></div><div class="square blank" id="8,3"></div><div class="square blank" id="8,4"></div><div class="square blank" id="8,5"></div><div class="square blank" id="8,6"></div><div class="square blank" id="8,7"></div><div class="square blank" id="8,8"></div><div class="square blank" id="8,9"></div><div class="borderlr"></div><div class="borderlr"></div><div class="square blank" id="9,1"></div><div class="square blank" id="9,2"></div><div class="square blank" id="9,3"></div><div class="square blank" id="9,4"></div><div class="square blank" id="9,5"></div><div class="square blank" id="9,6"></div><div class="square blank" id="9,7"></div><div class="square blank" id="9,8"></div><div class="square blank" id="9,9"></div><div class="borderlr"></div><div class="borderbl"></div><div class="bordertb"></div><div class="bordertb"></div><div class="bordertb"></div><div class="bordertb"></div><div class="bordertb"></div><div class="bordertb"></div><div class="bordertb"></div><div class="bordertb"></div><div class="bordertb"></div><div class="borderbr"></div><div class="square blank" style="display: none;" id="0,0"></div><div class="square blank" style="display: none;" id="0,1"></div><div class="square blank" style="display: none;" id="0,2"></div><div class="square blank" style="display: none;" id="0,3"></div><div class="square blank" style="display: none;" id="0,4"></div><div class="square blank" style="display: none;" id="0,5"></div><div class="square blank" style="display: none;" id="0,6"></div><div class="square blank" style="display: none;" id="0,7"></div><div class="square blank" style="display: none;" id="0,8"></div><div class="square blank" style="display: none;" id="0,9"></div><div class="square blank" style="display: none;" id="0,10"></div><div class="square blank" style="display: none;" id="10,0"></div><div class="square blank" style="display: none;" id="10,1"></div><div class="square blank" style="display: none;" id="10,2"></div><div class="square blank" style="display: none;" id="10,3"></div><div class="square blank" style="display: none;" id="10,4"></div><div class="square blank" style="display: none;" id="10,5"></div><div class="square blank" style="display: none;" id="10,6"></div><div class="square blank" style="display: none;" id="10,7"></div><div class="square blank" style="display: none;" id="10,8"></div><div class="square blank" style="display: none;" id="10,9"></div><div class="square blank" style="display: none;" id="10,10"></div><div class="square blank" style="display: none;" id="1,0"></div><div class="square blank" style="display: none;" id="1,10"></div><div class="square blank" style="display: none;" id="2,0"></div><div class="square blank" style="display: none;" id="2,10"></div><div class="square blank" style="display: none;" id="3,0"></div><div class="square blank" style="display: none;" id="3,10"></div><div class="square blank" style="display: none;" id="4,0"></div><div class="square blank" style="display: none;" id="4,10"></div><div class="square blank" style="display: none;" id="5,0"></div><div class="square blank" style="display: none;" id="5,10"></div><div class="square blank" style="display: none;" id="6,0"></div><div class="square blank" style="display: none;" id="6,10"></div><div class="square blank" style="display: none;" id="7,0"></div><div class="square blank" style="display: none;" id="7,10"></div><div class="square blank" style="display: none;" id="8,0"></div><div class="square blank" style="display: none;" id="8,10"></div><div class="square blank" style="display: none;" id="9,0"></div><div class="square blank" style="display: none;" id="9,10"></div></div>
+
+                    <form id="options-form">
+                        <table cellspacing="0" cellpadding="2" id="options" class="dialog">
+                            <tbody><tr class="dialog-title">
+                                <td style="padding: 3px;">Игра</td>
+                                <td colspan="3" style="padding: 3px;">
+                                    <div style="text-align: right;">
+                                        <a href="#" id="options-close" class="dialog-close" title="close this box">×</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr style="background-color: #DDDDDD;">
+                                <td></td>
+                                <td>Высота</td>
+                                <td>Ширина</td>
+                                <td>Мины</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="field" id="beginner"> <label for="beginner"><strong>Новичок</strong></label></td>
+                                <td>9</td>
+                                <td>9</td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="field" id="intermediate"> <label for="intermediate"><strong>Бывалый</strong></label></td>
+                                <td>16</td>
+                                <td>16</td>
+                                <td>40</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="field" checked="checked" id="expert"> <label for="expert"><strong>Эксперт</strong></label></td>
+                                <td>16</td>
+                                <td>30</td>
+                                <td>99</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="field" id="custom"> <label for="custom">Особый</label></td>
+                                <td><input type="text" value="20" id="custom_height" class="dialog-text-input"></td>
+                                <td><input type="text" value="30" id="custom_width" class="dialog-text-input"></td>
+                                <td><input type="text" value="145" id="custom_mines" class="dialog-text-input"></td>
+                            </tr>
+                            <tr style="background-color: #DDDDDD;">
+                                <td><input type="submit" value="Новая игра" class="dialogText" style="vertical-align: middle;"></td>
+                                <td colspan="3">
+                                    <input type="checkbox" id="marks">
+                                    <label for="marks">Marks (?)</label>
+                                </td>
+                            </tr>
+                            </tbody></table>
+                    </form>
+
+                    <table cellspacing="0" cellpadding="2" id="display" class="dialog">
+                        <tbody><tr class="dialog-title">
+                            <td>Отображение</td>
+                            <td>
+                                <div style="text-align: right;">
+                                    <!--<a href="http://xn--80aa1agjdchjh2p.xn--p1ai/#" id="display-close" class="dialog-close" title="close this box">×</a>-->
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 6px;"><strong>Увеличение</strong></td>
+                            <td style="padding: 6px;">
+                                <input type="radio" name="zoom" id="zoom100" value="1" checked="checked"> <label for="zoom100">100%</label><br>
+                                <input type="radio" name="zoom" id="zoom150" value="1.5"> <label for="zoom150">150%</label><br>
+                                <input type="radio" name="zoom" id="zoom200" value="2"> <label for="zoom200">200%</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 6px; border-top: 1px solid #AAA;"><strong>Позиция</strong></td>
+                            <td style="padding: 6px; border-top: 1px solid #AAA;">
+                                <input type="radio" name="position" id="position-left" value="left" checked="checked"> <label for="position-left">Слева</label><br>
+                                <input type="radio" name="position" id="position-center" value="center"> <label for="position-center">По центру</label><br>
+                            </td>
+                        </tr>
+                        </tbody></table>
+                </div>
+                </div>
+            </div>
+
+            <!--Winamp-->
+            <div class="win-winamp" data-window="winamp"></div>
+            <div class="b-player">
+                <iframe id="external_player" scrolling="no" frameborder="0" height="470px" width="276px" src="http://music.yandex.ru/external/player2.xml?id=236237543&mode=Muz-winamp&scroll=yes#!1046"></iframe>
+            </div>
+
+            <div class="win-calculator" data-window="calculator">
+                <div class="wrap">
+                        <div class="win-menu">
+                            <ul>
+                                <li>Вид</li>
+                                <li>Правка</li>
+                                <li>Справка</li>
+                            </ul>
+                            <hr color="#808080"/>
+                        </div>
+
+                    <div class="prog-win">
+                        <div class="screen-wrap"><div class="screen"></div></div>
+                        <div class="keys">
+                            <div class="empty-wrap"><span class="empty"></span></div>
+                            <div class="but-wrap clear"><span class="calc-but">C</span></div>
+                            <div class="but-wrap back"><span class="calc-but">Back</span></div>
+                            <div class="but-wrap"><span class="calc-but">7</span></div>
+                            <div class="but-wrap"><span class="calc-but">8</span></div>
+                            <div class="but-wrap"><span class="calc-but">9</span></div>
+                            <div class="but-wrap operator"><span class="calc-but">+</span></div>
+                            <div class="but-wrap"><span class="calc-but">4</span></div>
+                            <div class="but-wrap"><span class="calc-but">5</span></div>
+                            <div class="but-wrap"><span class="calc-but">6</span></div>
+                            <div class="but-wrap operator"><span class="calc-but">-</span></div>
+                            <div class="but-wrap"><span class="calc-but">1</span></div>
+                            <div class="but-wrap"><span class="calc-but">2</span></div>
+                            <div class="but-wrap"><span class="calc-but">3</span></div>
+                            <div class="but-wrap operator"><span class="calc-but">÷</span></div>
+                            <div class="but-wrap"><span class="calc-but">0</span></div>
+                            <div class="but-wrap"><span class="calc-but">.</span></div>
+                            <div class="but-wrap eval"><span class="calc-but">=</span></div>
+                            <div class="but-wrap operator"><span class="calc-but">x</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Завершение работы-->
+            <div class="win-shutdown" data-window="shutdown">
+                <div class="wrap">
+                    <span class="icon shutdown"></span>
+                    <div class="sd-right">
+                        <p>Сейчас следует:</p>
+                        <input type="radio" name="shutdown" checked id="yes"/><label for="yes">Выключить</label> <br>
+                        <input type="radio" name="shutdown" id="no" /><label for="no">Перезагрузить</label> <br>
+                        <input type="radio"  name="shutdown" id="help" disabled/><label for="help" class="no-active">Перезагрузить компьютер в режиме MS-DOS </label><br>
+                        <div class="shutdown-buttons">
+                            <button class="sd-but" value="yes">Да</button>
+                            <button class="sd-but" value="no">Нет</button>
+                            <button class="sd-but">Справка</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <script src="js/jquery-1.11.0.min.js"></script>
+        <script src="js/jquery-ui.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/minesweeper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+
+        <!--Аудио файлы-->
+        <audio class="play-start-windows">
+            <source src="sounds/start.mp3">
+            <source src="sounds/start.ogg">
+        </audio>
+        <audio class="play-shutdown">
+            <source src="sounds/shutdown.mp3">
+            <source src="sounds/shutdown.ogg">
+        </audio>
+        <audio class="play-recycle-clean">
+            <source src="sounds/recycle-clean.mp3">
+            <source src="sounds/recycle-clean.ogg">
+        </audio>
+
+    </body>
+</html>

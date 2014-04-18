@@ -1,0 +1,882 @@
+/* reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+ol, ul {
+    list-style: none;
+}
+
+/* My classes*/
+html,
+.container {
+    height: 100%;
+}
+body {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 11px;
+    position: relative;
+    overflow: hidden;
+}
+.container {
+    position: relative;
+    overflow: hidden;
+    background: #009495;
+}
+.container.shutdown {
+    background: url("../img/shutdown.jpg") #000 center no-repeat;
+}
+.container.poweroff {
+    background: #000;
+}
+.desktop {
+    padding: 2px 5px;
+}
+.desktop > .icons {
+    display: none;
+}
+.icons {
+    width: 82px;
+    text-align: center;
+    height: 80px;
+}
+.icon{
+    display: block;
+    height: 32px;
+    width: 32px;
+    margin: 0 auto;
+}
+.icon-text {
+    display: inline-block;
+    cursor: default;
+    color: #fff;
+    line-height: 13px;
+
+    margin-top: 4px;
+    max-height: 40px;
+    overflow: hidden;
+}
+
+/* Иконки */
+.my-comp .icon {
+    background: url("../img/icons-main.png") -378px 0;
+
+}
+.recycle.empty .icon {
+    background: url("../img/icons-main.png") -504px 0;
+}
+.recycle.full .icon {
+    background: url("../img/icons-main.png") -546px 0;
+}
+.calc .icon {
+    background: url("../img/icons-main.png") -168px 0;
+}
+.notepad .icon {
+    background: url("../img/icons-main.png") -420px 0;
+}
+.mineweeper .icon {
+    background: url("../img/icons-main.png") -336px 0;
+}
+.winamp .icon {
+    background: url("../img/icons-main.png") -798px 0;
+}
+.shri .icon {
+    background: url("../img/icons-main.png") -126px 0;
+
+}
+.floppy .icon {
+    background: url("../img/icons-main.png") -84px 0;
+
+}
+.disk-c .icon {
+    background: url("../img/icons-main.png") -294px 0;
+}
+.cd-rom .icon {
+    background: url("../img/icons-main.png") -210px 0;
+}
+.control-panel .icon {
+    background: url("../img/icons-main.png") -252px 0;
+}
+.printers .icon {
+    background: url("../img/icons-main.png") -462px 0;
+}
+/* end Иконки */
+
+/* Меню Пуск */
+.start-menu {
+    height: 22px;
+    background: #cacaca;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    border-top: 1px solid #fff;
+    outline: 1px solid #cacaca;
+    z-index: 999;
+    padding: 2px;
+    display: none;
+}
+.start {
+    display: inline-block;
+    width: 52px;
+    height: 20px;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    box-shadow: inset -1px -1px 0 0 #919191;
+}
+.start .wrap {
+    margin: 3px 0 0 3px;
+}
+.start-menu.open .start {
+    box-shadow: inset 1px 1px 0 0 #919191;
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+}
+.start-icon {
+    background: url("../img/icons-mini.png") 0 -120px;
+    display: inline-block;
+    width: 16px;
+    height: 14px;
+    float: left;
+}
+.start-menu.open .start .wrap {
+    border: 1px dotted #000;
+}
+.start-text {
+    padding: 0 0 0 2px;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 12px;
+}
+.menu-list {
+    position: absolute;
+    left: 2px;
+    bottom: 24px;
+    display: none;
+}
+.start-menu.open + .menu-list {
+    display: block;
+    z-index: 999;
+}
+.menu-list-left {
+    float: left;
+    width: 21px;
+    height: 238px;
+    display: inline-block;
+    background: url("../img/win95-start.png") no-repeat #828282 center 114px;
+}
+.level-first {
+    height: 238px;
+    display: inline-block;
+
+    width: 189px;
+}
+.level-first > li {
+    height: 33px;
+    line-height: 33px;
+    position: relative;
+}
+.level-first li:hover,
+.win-menu .dropdown-menu li:hover{
+    background: #131f91;
+    color: #fff;
+}
+.level-first > li:last-child {
+    height: 38px;
+    line-height: 38px;
+}
+.level-first > li:hover .level-second {
+    display: block;
+}
+.level-second {
+    position: absolute;
+    left: 188px;
+    top: -2px;
+    /*background: #C3C3C3;*/
+    color: #000;
+    display: none;
+
+}
+.level-second li {
+    min-width: 137px;
+    height: 20px;
+    line-height: 20px;
+}
+.start-icons {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    float: left;
+}
+.start-icons.progs {
+    background: url("../img/icons-main.png") -840px 0;
+}
+.start-icons.docs {
+    background: url("../img/icons-main.png") 0 0;
+
+}
+.start-icons.settings {
+    background: url("../img/icons-main.png") -630px 0;
+}
+.start-icons.find {
+    background: url("../img/icons-main.png") -42px 0;
+}
+.start-icons.help {
+    background: url("../img/icons-main.png") -756px 0;
+}
+.start-icons.run {
+    background: url("../img/icons-main.png") -588px 0;
+}
+.start-icons.power {
+    background: url("../img/icons-main.png") -672px 0;
+}
+.level-second .start-icons {
+    width: 16px;
+    height: 16px;
+    margin: 2px 5px 0 0;
+    background: url("../img/icons-mini.png") 0 -17px;
+}
+.start-icons.win-exp {
+    background: url("../img/icons-mini.png") 0 -402px;
+}
+.start-icons.ms-dos {
+    background: url("../img/icons-mini.png") 0 -69px;
+}
+.start-icons.ie {
+    background: url("../img/icons-mini.png") 0 -43px;
+}
+.level-first .arrow {
+    background: url("../img/icons-mini.png") 0 0;
+    width: 4px;
+    height: 7px;
+    display: inline-block;
+    position: absolute;
+    top: 12px;
+    right: 8px;
+}
+li.hr {
+    height: 1px;
+    background: #fff;
+    border-top: 1px solid #939393;
+}
+/* end Меню Пуск */
+
+.right-menu {
+    float: right;
+    width: 80px;
+    height: 16px;
+    border-top: 1px solid #939393;
+    border-left: 1px solid #939393;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    padding: 2px;
+    margin-right: 4px;
+}
+.language {
+    display: inline-block;
+    background: url("../img/icons-mini.png") 0 -94px;
+    width: 16px;
+    height: 16px;
+}
+.volume {
+    display: inline-block;
+    background: url("../img/icons-mini.png") 0 -288px;
+    width: 16px;
+    height: 16px;
+}
+.time {
+    font-size: 12px;
+    float: right;
+    margin: 2px 5px 0 0;
+}
+.ui-dialog.ui-widget,
+.but-wrap,
+.menu-list,
+.level-second,
+.task,
+.quit-message,
+.sd-but {
+    border-top: 1px solid #dfdfdf;
+    border-left: 1px solid #dfdfdf;
+    border-right: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+}
+.but-wrap,
+.menu-list-wrap,
+.task,
+.level-second-wrap
+{
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+}
+.menu-list,
+.level-second {
+    border-top: 1px solid #cdcdcd;
+    border-left: 1px solid #cdcdcd;
+}
+.menu-list-wrap,
+.level-second-wrap {
+    background: #C3C3C3;
+    padding: 1px;
+    border-right: 1px solid #929292;
+    border-bottom: 1px solid #929292;
+}
+.ui-widget-content,
+.calc-but,
+.message-wrap,
+.sd-but {
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #808080;
+    border-bottom: 1px solid #808080;
+    background: #c0c0c0;
+}
+.win-menu {
+    background: #c0c0c0
+}
+.no-active {
+    color: #7d7d7d;
+}
+.ui-dialog-content.ui-widget-content {
+    border-top: 0;
+}
+.ui-dialog-content .wrap {
+    border-top: none;
+    background: #C0C0C0;
+    height: calc(100% - 20px);
+}
+.ui-dialog-content.win-shutdown div.wrap {
+    background: #C0C0C0;
+}
+.ui-dialog .ui-dialog-content {
+    overflow: hidden !important;
+    padding: 0 2px 2px;
+    -webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;
+}
+
+/* Калькулятор */
+.ui-dialog .win-calculator {
+    padding: 0;
+}
+.win-calculator.ui-dialog-content div.wrap {
+    background: #c0c0c0;
+    border: 0;
+}
+.win-calculator {
+    height: auto;
+    font-size: 12px;
+}
+.win-calculator .prog-win {
+    padding: 0 12px 6px 12px;
+}
+.calc-but {
+    border-top: 1px solid #dfdfdf;
+    border-left: 1px solid #dfdfdf;
+    color: #0000ff;
+}
+.win-calculator .screen-wrap {
+    margin-bottom: 6px;
+}
+.top span.clear {
+    float: left;
+}
+.calc-but {
+    height: 25px;
+    width: 32px;
+    display: inline-block;
+    line-height: 23px;
+}
+.screen {
+    width: 150px;
+    height: 20px;
+    font-size: 11px;
+    text-align: right;
+    background: #fff;
+    line-height: 18px;
+    padding-right: 2px;
+}
+.keys,
+.win-notepad div.wrap {
+    overflow: hidden;
+}
+
+.keys .but-wrap {
+    float: left;
+    position: relative;
+    margin: 0 4px 6px 0;
+    color: #888;
+    text-align: center;
+}
+.but-wrap.operator .calc-but,
+.but-wrap.eval .calc-but {
+    color: #ff0000;
+}
+.keys .calc-but.eval {
+    background: #f1ff92;
+    color: #888e5f;
+}
+.but-wrap.clear .calc-but,
+.but-wrap.back .calc-but{
+    color: #800000;
+    width: 45px;
+}
+.but-wrap:active {
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
+}
+.but-wrap:active .calc-but {
+    border-top: 1px solid #808080;
+    border-left: 1px solid #808080;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+}
+.win-calculator .empty {
+    height: 22px;
+    width: 32px;
+    display: block;
+
+}
+.win-calculator .empty-wrap {
+    margin-left: 11px;
+    width: 34px;
+    height: 24px;
+    float: left;
+}
+.win-calculator {
+    border-top: none;
+}
+.keys .operator,
+.keys .clear {
+    margin-right: 0;
+}
+.keys .clear,
+.but-wrap.back{
+    float: right;
+}
+.but-wrap.back + div {
+    clear: both;
+}
+.screen-wrap,
+.win-calculator .empty-wrap,
+.ui-dialog-content .wrap {
+    border-top: 1px solid #808080;
+    border-left: 1px solid #808080;
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
+}
+.screen,
+.win-calculator .empty {
+    border-right: 1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
+    border-left: 1px solid #000000;
+    border-top: 1px solid #000000;
+}
+.win-notepad textarea {
+    border: none;
+    overflow: auto;
+}
+.screen-wrap {
+    height: 22px;
+    width: 154px;
+
+}
+/* end Калькулятор*/
+
+.win-menu > ul > li {
+    display: inline-block;
+    padding: 2px 4px 0;
+}
+.win-menu > ul > li:hover,
+.win-menu > ul > li.open {
+    -webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;
+    padding: 1px 3px 0;
+    border-top: 1px solid #dfdfdf;
+    border-left: 1px solid #dfdfdf;
+    border-right: 1px solid #919191;
+    border-bottom: 1px solid #919191;
+}
+.win-menu > ul > li.open {
+    border-top: 1px solid #919191;
+    border-left: 1px solid #919191;
+    border-right: 1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
+}
+.win-menu ul li:hover .dropdown-menu {
+    left: -8px;
+}
+.win-menu ul{
+    padding: 1px 0 0 5px ;
+}
+/*Запрет выделения текста*/
+.start-text,
+.right-menu,
+.ui-dialog-title,
+.win-menu,
+.calc-but,
+.screen,
+.task-text,
+.level-first li,
+.dropdown-toggle {
+    cursor: default;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.ui-state-focus {
+    outline: none;
+}
+.ui-dialog .ui-button {
+    box-shadow: inset -1px -1px 0 0 #919191;
+    cursor: default;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    float: right;
+    margin: 2px 0 0 0;
+    width: 16px;
+    padding: 0;
+    height: 14px;
+}
+.taskbar,
+.start {
+    float: left;
+}
+.task {
+    width: 156px;
+    height: 18px;
+    margin-left: 3px;
+    box-shadow: inset -1px -1px 0 0 #919191;
+    padding: 2px 0 0 2px;
+    line-height: 16px;
+    float: left;
+}
+.task.active {
+    background: #fff;
+    box-shadow: inset 1px 1px 0 0 #919191;
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
+}
+.win-menu hr {
+    border-bottom: 1px solid #fff;
+    margin: 6px 2px 10px;
+}
+.task .task-icon {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    float: left;
+    margin-right: 3px;
+}
+.my-comp > .icon-text {
+    white-space: nowrap;
+}
+
+/* Иконки для таскбара и в левом углу окон */
+.task-calculator .task-icon {
+    background: url("../img/icons-mini.png") 0 -142px no-repeat;
+}
+.calculator .ui-dialog-title {
+    background: url("../img/icons-mini.png") 0 -142px no-repeat;
+}
+.task-my-comp .task-icon {
+    background: url("../img/icons-mini.png") 0 -189px no-repeat;
+}
+.my-comp .ui-dialog-title {
+    background: url("../img/icons-mini.png") 0 -189px no-repeat;
+}
+.task-recycle .task-icon {
+    background: url("../img/icons-mini.png") 0 -239px no-repeat;
+}
+.recycle .ui-dialog-title {
+    background: url("../img/icons-mini.png") 0 -239px no-repeat;
+}
+.task-notepad .task-icon {
+    background: url("../img/icons-mini.png") 0 -214px no-repeat;
+}
+.notepad .ui-dialog-title {
+    background: url("../img/icons-mini.png") 0 -214px no-repeat;
+}
+.task-mineweeper .task-icon {
+    background: url("../img/icons-mini.png") 0 -165px no-repeat;
+}
+.mineweeper .ui-dialog-title {
+    background: url("../img/icons-mini.png") 0 -165px no-repeat;
+}
+.task-winamp .task-icon {
+    background: url("../img/icons-mini.png") 0 -263px no-repeat;
+}
+/* end Иконки для таскбара и в левом углу окон */
+
+.win-notepad div.wrap {
+    padding: 0 0 4px 0;
+    position: relative;
+}
+.win-notepad textarea {
+    width: 100%;
+    height: 100%;
+    resize: none;
+    margin: 0;
+}
+.win-notepad textarea:focus,
+.win-notepad textarea:active {
+    outline: none;
+}
+
+.ui-dialog-content .win-menu {
+    height: 20px;
+}
+.win-calculator .win-menu {
+    height: auto;
+}
+.calculator .ui-dialog-titlebar-resize,
+.mineweeper .ui-dialog-titlebar-resize {
+    background: url("../img/icons-mini.png") 0 -358px !important;
+}
+.btn-group {
+    position: relative;
+}
+.win-menu .dropdown-menu {
+    position: absolute;
+    left: -8px;
+    z-index: 1000;
+    display: none;
+    padding: 2px 0;
+    margin: 2px 0 0;
+    list-style: none;
+    background: #C0C0C0;
+    text-align: left;
+    min-width: 100px;
+    box-sizing: border-box;
+}
+.open > .dropdown-menu {
+    display: block;
+}
+.win-menu .dropdown-menu li {
+    font-size: 12px;
+    margin: 1px 0;
+    white-space: nowrap;
+    padding: 0 14px;
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+.win-menu a {
+    text-decoration: none;
+}
+.win-menu a:focus,
+.win-menu a:hover {
+    border: none;
+    outline: none;
+}
+.ui-dialog.ui-widget .wrap {
+    background: #fff;
+}
+.ui-dialog .icon-text {
+    color: #000;
+    font-size: 11px;
+}
+.ui-dialog .icons {
+    float: left;
+}
+.ui-dialog .wrap {
+    padding-top: 4px;
+    overflow: auto;
+    -webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;
+}
+.calculator .wrap {
+    padding-top: 0;
+}
+/* notepad */
+.quit-message-wrap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    height: inherit;
+    display: none;
+}
+.quit-message {
+    width: 350px;
+    height: 100px;
+    position: absolute;
+    top: calc(50% - 50px);
+    left: calc(50% - 175px);
+}
+.win-notepad .wrap {
+    position: relative;
+}
+.message-header {
+    height: 18px;
+    width: 100%;
+    background: #000080;
+}
+.message-header .message-close {
+    background: url("../img/icons-mini.png") 0 -314px;
+    height: 14px;
+    width: 16px;
+    float: right;
+    box-shadow: none;
+    margin: 2px 2px 0 0;
+}
+.message-header .message-close:focus,
+.message-header .message-close:active {
+    box-shadow: none;
+    outline: none;
+}
+.button-block button {
+    width: 73px;
+    height: 21px;
+    background: inherit;
+    margin-right: 5px;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    padding: 0 10px;
+    box-shadow: inset -1px -1px 0 0 #919191;
+}
+.button-block button:active,
+.sd-but:active {
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+    box-shadow: inset 1px 1px 0 0 #919191;
+}
+.message-text {
+    display: inline-block;
+    margin: 8px 0 0 10px;
+}
+.button-block {
+    margin: 20px 0 0 50px;
+}
+.message-wrap {
+    height: 100%;
+}
+.message-wrap {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.ui-dialog.shutdown .ui-dialog-title {
+    padding-left: 2px;
+}
+input[type=radio]:checked,
+input[type=radio]:active,
+input[type=radio]:focus {
+    outline: none;
+    box-shadow: none;
+    text-shadow: none;
+}
+.recycle .wrap {
+    padding: 2px 5px;
+}
+/* Start Windows */
+.start-windows {
+    background: url("../img/start-windows.jpg") no-repeat center #000;
+    margin: 0 auto;
+}
+/* Shutdown */
+.win-shutdown {
+    padding: 0;
+}
+.shutdown .ui-dialog-titlebar-resize,
+.shutdown .ui-dialog-titlebar-mini {
+    display: none;
+}
+.win-shutdown .wrap {
+    border: none;
+    padding: 18px 18px 9px;
+}
+.shutdown.icon {
+    background: url("../img/icons-main.png") -714px 0;
+    float: left;
+    margin-right: 18px;
+}
+.sd-right {
+    float: left;
+    font-size: 11px;
+}
+.sd-right p {
+    margin-bottom: 6px;
+}
+.sd-right input {
+    margin: 4px 5px 4px 0;
+}
+.sd-but {
+    width: 76px;
+    height: 20px;
+    box-shadow: inset -1px -1px 0 0 #919191;
+    padding: 0;
+}
+.shutdown-buttons {
+    margin-top: 15px;
+}
+/* winamp */
+.ui-dialog.winamp {
+    border: 0;
+    background: none;
+}
+.winamp .ui-widget-header.ui-dialog-titlebar {
+    padding: 0;
+    border: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    height: 14px;
+    background: url("../img/winamp.jpg");
+}
+.winamp .ui-dialog-titlebar .ui-dialog-titlebar-resize{
+    display: none;
+}
+.winamp .ui-dialog-titlebar .ui-button {
+    background: none;
+    border: 0;
+    box-shadow: none;
+    width: 10px;
+    height: 12px;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .winamp .ui-dialog-titlebar .ui-button {
+        width: 14px;
+    }
+}
+.ui-dialog .win-winamp {
+    padding: 0;
+    border: 0;
+}
+.b-player {
+    display: none;
+}
