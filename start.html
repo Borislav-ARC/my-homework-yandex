@@ -25,7 +25,7 @@
                     <span class="icon-text"> Калькулятор </span>
                 </div>
                 <div class="icons notepad">
-                    <span class="icon desk" data-window="notepad"></span>
+                    <span class="icon desk" data-window="notepad-0"></span>
                     <span class="icon-text"> Блокнот </span>
                 </div>
                 <div class="icons mineweeper">
@@ -41,6 +41,9 @@
                     <span class="icon-text"> Шри Галлерея </span>
                 </div>
 
+                <div class="new-elements">
+
+                </div>
             </div>
             <div class="start-menu">
                 <div class="start btn-group dropdown-toggle" data-toggle="dropdown">
@@ -88,6 +91,7 @@
         </div>
 
         <!-- Окна -->
+        <div class="created-windows">
 
             <!--Мой компьютер-->
             <div class="win-my-comp" data-window="my-comp">
@@ -156,32 +160,154 @@
             </div>
 
             <!--Блокнот-->
-            <div class="win-notepad" data-window="notepad">
+            <div class="win-notepad-0" data-window="notepad-0">
                 <div class="win-menu">
                     <ul>
-                        <li>Файл</li>
-                        <li>Правка</li>
+                        <li class="btn-group"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Файл </a>
+                            <ul class="dropdown-menu">
+                                <li class="creat-new-notepad">Создать</li>
+                                <li class="no-active">Открыть...</li>
+                                <li class="note-save">Сохранить</li>
+                                <li class="note-save-as">Сохранить как...</li>
+                                <li class="note-quit">Выход</li>
+                            </ul>
+                        </li>
+                        <li class="btn-group"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Правка</a>
+                            <ul class="dropdown-menu">
+                                <li class="no-active">Отменить</li>
+                                <li class="no-active">Вырезать</li>
+                                <li class="no-active">Копировать</li>
+                                <li class="no-active">Вставить</li>
+                                <li class="no-active">Удалить</li>
+                                <li class="no-active">Выделить все</li>
+                            </ul>
+                        </li>
+                        <li class="btn-group"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Вид</a>
+                            <ul class="dropdown-menu">
+                                <li class="no-active">Перенос по строкам</li>
+                                <li class="note-setting">Настройки шрифта</li>
+                            </ul>
+                        </li>
                         <li>Справка</li>
                     </ul>
                 </div>
                 <div class="wrap">
-                    <textarea data-changes="false">Удалите или отредактируйте этот текст для проверки</textarea>
+                    <textarea class="notepad-text" data-changes="false">Удалите или отредактируйте этот текст для проверки</textarea>
+
+                </div>
+
                     <div class="quit-message-wrap">
                         <div class="quit-message">
                             <div class="message-wrap">
                                 <div class="message-header">
-                                    <button class="message-close" value="cancel"></button>
+                                    <button class="message-close note-close" value="cancel"></button>
                                 </div>
-                                <span class="message-text"> Хотите сохранить изменения в файле Блокнот? </span>
+                                <span class="message-text"> Хотите сохранить изменения в файле <span class="title-note">Блокнот</span>? </span>
                                 <div class="button-block">
-                                    <button class="message-button" value="yes"> Да </button>
-                                    <button class="message-button" value="no"> Нет </button>
-                                    <button class="message-button" value="cancel"> Отмена </button>
+                                    <button class="message-button note-close" value="yes"> Да </button>
+                                    <button class="message-button note-close" value="no"> Нет </button>
+                                    <button class="message-button note-close" value="cancel"> Отмена </button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+
+                    <div class="note-save-as-wrap">
+                        <div class="note-save-as-message">
+                            <div class="message-wrap">
+                                <div class="message-header">
+                                    Сохранить как
+                                    <button class="message-close note-save-as-close" value="cancel"></button>
+                                </div>
+                                <div class="note-save-as-content"></div>
+                                <div class="note-save-as-button-block">
+                                    <label>Имя<input type="text" name="note-name" class="note-name-save-as"/></label>
+                                    <button class="note-save-as-button note-save-as-close" value="cancel"> Отмена </button>
+                                    <button class="note-save-as-button note-save-as-close" value="yes"> Сохранить </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="note-save-as-replace">
+                            <div class="message-wrap">
+                                <div class="message-header">
+                                    Файл существует
+                                    <button class="message-close note-save-as-close" value="cancel"></button>
+                                </div>
+                                <div class="note-save-as-replace-content">
+                                    <p>Файл с таким именем уже существует! Заменить?</p>
+                                    <div class="note-save-as-button-block">
+                                        <button class="note-save-as-button note-save-as-close" value="no-replace"> Нет </button>
+                                        <button class="note-save-as-button note-save-as-close" value="replace"> Да </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="setting-wrap">
+                        <div class="setting-message">
+                            <div class="message-wrap">
+                                <div class="message-header">
+                                    Настройки текста
+                                    <button class="message-close settings-close" value="cancel"></button>
+                                </div>
+                                <div class="settings-content">
+                                    <div class="note-font-family">
+                                        <label>Стиль шрифта<select class="select-font-style">
+                                            <option value="normal,normal">Обычный</option>
+                                            <option value="bold,normal">Жирный</option>
+                                            <option value="normal,italic">Курсивный</option>
+                                            <option value="bold,italic">Жирный и курсивный</option>
+                                        </select></label>
+                                        <label>Шрифт<br>
+                                            <select class="select-font-family">
+                                            <option>Arial</option>
+                                            <option>Calibri</option>
+                                            <option>Futura</option>
+                                            <option>Geneva</option>
+                                            <option>Optima</option>
+                                            <option>Tahoma</option>
+                                            <option>Times New Roman</option>
+                                            <option>Trebushet</option>
+                                            <option selected>Verdana</option>
+                                        </select></label>
+                                    </div>
+
+                                    <div class="note-font-size">
+                                        <label>Размер шрифта<input type="text" class="input-font-size" value="12"/></label>
+                                        <select class="select-font-size">
+                                            <option>8</option>
+                                            <option>10</option>
+                                            <option selected>12</option>
+                                            <option>14</option>
+                                            <option>16</option>
+                                            <option>18</option>
+                                            <option>20</option>
+                                            <option>22</option>
+                                            <option>24</option>
+                                            <option>26</option>
+                                            <option>28</option>
+                                            <option>32</option>
+                                            <option>36</option>
+                                            <option>40</option>
+                                            <option>46</option>
+                                            <option>52</option>
+                                            <option>60</option>
+                                            <option>66</option>
+                                            <option>72</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                                <div class="button-block">
+                                    <button class="message-button settings-close" value="yes"> ОК </button>
+                                    <button class="message-button settings-close" value="cancel"> Отмена </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
             </div>
 
             <!--Сапер-->
@@ -284,7 +410,7 @@
             <div class="win-calculator" data-window="calculator">
                 <div class="wrap">
                         <div class="win-menu">
-                            <ul>
+                            <ul class="ui-helper-clearfix">
                                 <li>Вид</li>
                                 <li>Правка</li>
                                 <li>Справка</li>
@@ -336,6 +462,9 @@
                     </div>
                 </div>
             </div>
+
+        </div>
+
 
         <script src="js/jquery-1.11.0.min.js"></script>
         <script src="js/jquery-ui.js"></script>

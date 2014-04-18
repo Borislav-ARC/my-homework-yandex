@@ -53,8 +53,10 @@ body {
 .desktop {
     padding: 2px 5px;
 }
-.desktop > .icons {
-    display: none;
+.new-elements {
+    position: absolute;
+    left: 110px;
+    top: 2px;
 }
 .icons {
     width: 82px;
@@ -216,10 +218,8 @@ body {
     position: absolute;
     left: 188px;
     top: -2px;
-    /*background: #C3C3C3;*/
     color: #000;
     display: none;
-
 }
 .level-second li {
     min-width: 137px;
@@ -420,7 +420,7 @@ li.hr {
     padding-right: 2px;
 }
 .keys,
-.win-notepad div.wrap {
+div[class*='notepad'] div.wrap {
     overflow: hidden;
 }
 
@@ -497,10 +497,6 @@ li.hr {
     border-left: 1px solid #000000;
     border-top: 1px solid #000000;
 }
-.win-notepad textarea {
-    border: none;
-    overflow: auto;
-}
 .screen-wrap {
     height: 22px;
     width: 154px;
@@ -509,13 +505,13 @@ li.hr {
 /* end Калькулятор*/
 
 .win-menu > ul > li {
-    display: inline-block;
-    padding: 2px 4px 0;
+    float: left;
+    padding: 2px 7px 0;
 }
 .win-menu > ul > li:hover,
 .win-menu > ul > li.open {
-    -webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;
-    padding: 1px 3px 0;
+    /*-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;*/
+    padding: 1px 6px 0;
     border-top: 1px solid #dfdfdf;
     border-left: 1px solid #dfdfdf;
     border-right: 1px solid #919191;
@@ -531,7 +527,7 @@ li.hr {
     left: -8px;
 }
 .win-menu ul{
-    padding: 1px 0 0 5px ;
+    padding: 1px 0 0 2px ;
 }
 /*Запрет выделения текста*/
 .start-text,
@@ -549,10 +545,13 @@ li.hr {
     -webkit-user-select: none;
     user-select: none;
 }
+.note-save-as-others {
+    cursor: default;
+}
 .ui-state-focus {
     outline: none;
 }
-.ui-dialog .ui-button {
+.ui-dialog-titlebar button {
     box-shadow: inset -1px -1px 0 0 #919191;
     cursor: default;
     border-right: 1px solid #000;
@@ -620,10 +619,10 @@ li.hr {
 .recycle .ui-dialog-title {
     background: url("../img/icons-mini.png") 0 -239px no-repeat;
 }
-.task-notepad .task-icon {
+div[class*='task-notepad'] .task-icon {
     background: url("../img/icons-mini.png") 0 -214px no-repeat;
 }
-.notepad .ui-dialog-title {
+div[class*='notepad'] .ui-dialog-title {
     background: url("../img/icons-mini.png") 0 -214px no-repeat;
 }
 .task-mineweeper .task-icon {
@@ -637,18 +636,20 @@ li.hr {
 }
 /* end Иконки для таскбара и в левом углу окон */
 
-.win-notepad div.wrap {
+div[class*='notepad'] div.wrap {
     padding: 0 0 4px 0;
     position: relative;
 }
-.win-notepad textarea {
+div[class*='notepad'] textarea {
     width: 100%;
     height: 100%;
     resize: none;
     margin: 0;
+    border: none;
+    overflow: auto;
 }
-.win-notepad textarea:focus,
-.win-notepad textarea:active {
+div[class*='notepad'] textarea:focus,
+div[class*='notepad'] textarea:active {
     outline: none;
 }
 
@@ -685,7 +686,7 @@ li.hr {
     font-size: 12px;
     margin: 1px 0;
     white-space: nowrap;
-    padding: 0 14px;
+    padding: 2px 14px;
     width: 100%;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -717,7 +718,9 @@ li.hr {
     padding-top: 0;
 }
 /* notepad */
-.quit-message-wrap {
+.quit-message-wrap,
+.setting-wrap,
+.note-save-as-wrap {
     position: absolute;
     left: 0;
     top: 0;
@@ -726,38 +729,146 @@ li.hr {
     height: inherit;
     display: none;
 }
-.quit-message {
-    width: 350px;
-    height: 100px;
+.quit-message,
+.setting-message {
+    width: 400px;
+    min-height: 95px;
     position: absolute;
     top: calc(50% - 50px);
-    left: calc(50% - 175px);
+    left: calc(50% - 200px);
 }
-.win-notepad .wrap {
+.note-save-as-message {
+    width: 500px;
+    height: 290px;
+    position: absolute;
+    top: 15%;
+    left: calc(50% - 250px);
+}
+.note-save-as-content {
+    background: #fff;
+    height: 194px;
+    width: 487px;
+    margin: 2px auto 0;
+    padding: 3px;
+    overflow-y: auto;
+}
+.note-save-as-button {
+    height: 21px;
+    background: #C0C0C0;
+    margin-right: 7px;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    padding: 0 10px;
+    box-shadow: inset -1px -1px 0 0 #919191;
+    float: right;
+}
+.note-name-save-as {
+    width: 93%;
+    margin-left: 2px;
+    height: 19px;
+    padding: 0;
+    border: 1px solid #919191;
+
+}
+.note-save-as-button-block label {
+    display: block;
+    margin-bottom: 9px;
+}
+.note-save-as-replace {
+    width: 400px;
+    height: 86px;
+    position: absolute;
+    top: 35%;
+    left: calc(50% - 200px);
+}
+.note-save-as-replace-content p {
+    margin: 9px 0 0 8px;
+}
+.note-save-as-replace {
+    display: none;
+}
+.note-save-as-button-block {
+    margin: 9px 0 0 5px;
+}
+.note-save-as-others {
+    padding-left: 18px;
+    background: url("../img/icons-mini.png") 0 -214px no-repeat;
+    margin-bottom: 3px;
+    height: 16px;
+}
+.note-font-family {
+    width: 56%;
+    float: left;
+    padding: 0 2%;
+}
+.note-font-size {
+    width: 38%;
+    float: right;
+    padding: 0 1%;
+}
+.note-font-family select {
+    width: 80%;
+}
+.settings-content:after {
+    clear: both;
+    display: block;
+    content: '';
+    height: 0;
+}
+.setting-message .button-block {
+    margin: 20px 0 12px 116px;
+}
+.select-font-size {
+    margin-top: 12px;
+}
+.select-font-size,
+.input-font-size {
+    width: 50%;
+}
+.settings-content {
+    padding-top: 5px;
+}
+div[class*='notepad'] .wrap {
     position: relative;
 }
 .message-header {
     height: 18px;
     width: 100%;
     background: #000080;
+    color: #fff;
+    padding-left: 3px;
+    -webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;
 }
 .message-header .message-close {
     background: url("../img/icons-mini.png") 0 -314px;
     height: 14px;
     width: 16px;
     float: right;
-    box-shadow: none;
     margin: 2px 2px 0 0;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    box-shadow: inset -1px -1px 0 0 #919191;
 }
 .message-header .message-close:focus,
-.message-header .message-close:active {
-    box-shadow: none;
+.message-header .message-close:active,
+.ui-dialog-titlebar-close.ui-state-active.ui-state-hover:active,
+.ui-dialog-titlebar .ui-dialog-titlebar-close:active {
+    box-shadow: inset 1px 1px 0 0 #919191;
     outline: none;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+    background: url("../img/icons-mini.png") 0 -313px;
 }
 .button-block button {
+    background: #c0c0c0;
     width: 73px;
     height: 21px;
-    background: inherit;
     margin-right: 5px;
     border-right: 1px solid #000;
     border-bottom: 1px solid #000;
@@ -767,7 +878,8 @@ li.hr {
     box-shadow: inset -1px -1px 0 0 #919191;
 }
 .button-block button:active,
-.sd-but:active {
+.sd-but:active,
+.note-save-as-button:active {
     border-right: 1px solid #fff;
     border-bottom: 1px solid #fff;
     border-top: 1px solid #000;
@@ -779,7 +891,7 @@ li.hr {
     margin: 8px 0 0 10px;
 }
 .button-block {
-    margin: 20px 0 0 50px;
+    margin: 20px 0 12px 50px;
 }
 .message-wrap {
     height: 100%;
